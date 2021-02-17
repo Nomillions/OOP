@@ -5,11 +5,13 @@ class RetailItem:
         self.__Price              = price
 
     def set_description(self, desc):
-        self.__Description = desc
+        self.__Description        = desc
+
     def set_inven_quantity(self, quantity):
         self.__Inventory_Quantity = quantity
+
     def set_price(self, price):
-        self.__Price = price
+        self.__Price              = price
 
     #def return_item(self):
     #    return self.__Description, self.__Inventory_Quantity, self.__Price
@@ -51,7 +53,7 @@ def Item_ID():
         desc        = input("Please enter the item's description: ")
         quantity    = int(input("Please enter the item's current invetory quantity: "))
         price       = float(input("Please enter the item's current price: "))
-        print("\n","\n")
+        print()
         item = ri.RetailItem(desc,quantity,price)
         item_list.append(item)
     return item_list
@@ -59,16 +61,20 @@ def Item_ID():
 def display_items(items_list):
     for item in items_list:
         print(item.__str__())
-    print(items_list)
+        write_items(items_list)
 
+def write_items(items_list):
+    outfile = open("Items_List.txt","w")
+    for item in items_list:
+        outfile.write(item.__str__()+ "\n")
+    outfile.close()
+    print("A list of the given items has been created for you.")
+    print("Please check the folder where you saved this .py file.")
+    print("The document is called: Items_List.txt")
 
-    
-    
 #def new_item_creation(desc,quantity,price):
 #    desc        = input("Please enter the item's description: ")
 #    quantity    = int(input("Please enter the item's current invetory quantity: "))
 #    price       = float(input("Please enter the item's current price: "))
 #    return(desc,quantity,price)
-
-
 main()
