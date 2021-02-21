@@ -1,3 +1,9 @@
+# Class HW Assignment
+# MIS 4322 - MW 1:00 - 2:15
+# Noah Miller
+
+
+#Create the class
 class RetailItem:
     def __init__(self,desc,quantity,price):
         self.__Description        = desc
@@ -20,19 +26,25 @@ class RetailItem:
        return (
            "Item Description: " +
            str(self.__Description) + "\n" +
-           "Invetory Quantity: " +
+           "Inventory Quantity: " +
            str(self.__Inventory_Quantity) + "\n" +
            "Price: $" +
            str(self.__Price) + "\n"
        )
 
 ############################################################################
+#Use the class
+
 import RetailItemClass as ri 
 
 def main():
     items = Item_ID()
 
     display_items(items)
+
+    print("A list of the given items has been created for you.")
+    print("Please check the folder where you saved this .py file.")
+    print("The document is called: Items_List.txt")
 
     #desc, quantity, price = Item_ID()
     #Item1 = ri.RetailItem(desc,quantity,price)
@@ -68,9 +80,7 @@ def write_items(items_list):
     for item in items_list:
         outfile.write(item.__str__()+ "\n")
     outfile.close()
-    print("A list of the given items has been created for you.")
-    print("Please check the folder where you saved this .py file.")
-    print("The document is called: Items_List.txt")
+    
 
 #def new_item_creation(desc,quantity,price):
 #    desc        = input("Please enter the item's description: ")
